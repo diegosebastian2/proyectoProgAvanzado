@@ -1,0 +1,25 @@
+<form [formGroup] = "registerForm" (ngSubmit)="doRegister()">
+
+
+    <div [ngClass]='{error: registerForm.get("nombre").errors && registerForm.get("nombre").dirty}'>
+      <input formControlName='nombre' type="text" name="nombre" value="" placeholder="Ingresar nombre">
+      <div *ngIf="registerForm.get('nombre').errors && registerForm.get('nombre').dirty">
+        <p *ngIf="registerForm.get('nombre').hasError('required')">
+          Error, nombre es requerido
+        </p>
+      </div>
+    </div>
+
+  <div class="">
+    <input formControlName='apellido' type="text" name="apellido" value="" placeholder="Ingresar apellido">
+  </div>
+  <div class="">
+    <input formControlName='email' type="email" name="email" value="" placeholder="Ingresar email">
+  </div>
+  <div class="">
+    <input formControlName='pass' type="password" name="pass" value="" placeholder="Ingresar pass">
+  </div>
+
+  <button type="submit" name="button">Registrarse!</button>
+
+</form>

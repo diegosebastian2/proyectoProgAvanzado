@@ -1,0 +1,19 @@
+<style>
+    .ok{
+        background: green;
+    }
+    .error{
+        background: red;
+    }    
+</style>
+
+<input type="text" [(ngModel)]="precio">
+<button *ngIf="precio>=0" (click)="calcular()">Calculo</button>
+
+<div [class]="msj_precio">{{precio}}</div>
+
+<div [ngClass]="{ok:precio>=0,error:precio<0}">{{precio}}</div>
+
+<div *ngFor="let producto of productos">
+    {{producto.id}}
+</div>
